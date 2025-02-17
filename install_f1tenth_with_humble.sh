@@ -33,7 +33,12 @@ git checkout humble-devel
 
 # Step 6: Update git submodules
 echo "Updating git submodules..."
-git submodule update --init --force --remote
+# git submodule update --init --force --remote
+git submodule update --init --recursive
+
+# revove old vesc
+rm -rf vesc
+git clone -b humble https://github.com/f1tenth/vesc.git
 
 # Step 7: Install dependencies
 echo "Installing dependencies..."
